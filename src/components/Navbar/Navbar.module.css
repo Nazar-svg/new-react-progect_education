@@ -1,0 +1,13 @@
+.nav {
+  padding-top: 20px;
+  grid-area: n;
+  text-align: center;
+  background-color: rgb(61, 61, 50);
+}
+
+.item {
+  padding-top: 7px;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}

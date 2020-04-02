@@ -1,0 +1,11 @@
+h1 {
+    padding-left: 10px;
+    text-transform: uppercase;
+}
+
+.search {
+    margin: 10px 10px 10px 10px;
+    padding-left: 30px;
+    width: 70%;
+    height: 50px;
+}
