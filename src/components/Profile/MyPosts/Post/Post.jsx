@@ -1,8 +1,8 @@
 import React from 'react';
 import classes from './Post.module.css';
-const Post = () => {
+const Post = (props) => {
   return (<div className={classes.post}>
-    post
+    {props.message}
   </div>);
 }
 

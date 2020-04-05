@@ -3,7 +3,7 @@ import MyPosts from '../Profile/MyPosts/MyPosts';
 import classes from './Profile.module.css';
 import Images from './images.jpg';
 const Profile = () => {
-  return <div className={classes.content}>
+  return <div>
     <div className={classes.poster}>
       <img className={classes.banner} src="https://uploads.elementcycles.net/2018/06/06235940/shutterstock_736432111-640x360.jpg" />
     </div>

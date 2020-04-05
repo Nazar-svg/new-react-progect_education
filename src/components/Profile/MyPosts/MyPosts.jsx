@@ -5,8 +5,8 @@ const MyPosts = () => {
   return (<div>
        <h1>my post</h1> 
        <input type="text" placeholder="new Coments" className={classes.search}/>
-       <Post />
-       <Post />
+       <Post  message = 'what, you doing?'/>
+       <Post  message = 'what, you problem?'/>
     </div>);
 }
 
