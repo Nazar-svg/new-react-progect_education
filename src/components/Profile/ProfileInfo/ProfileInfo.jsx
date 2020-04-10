@@ -22,7 +22,7 @@ const ProfileInfo = () => {
         </p>
       </div>
     </div>
-    </div>);
+  </div>);
 }
 
 export default ProfileInfo;

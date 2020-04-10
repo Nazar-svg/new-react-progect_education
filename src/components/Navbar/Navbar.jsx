@@ -19,7 +19,8 @@ const Navbar = () => {
       <div className={classes.item}>
         <NavLink to="/seting" activeClassName={classes.activLink}>Seting</NavLink>
       </div>
-    </nav>);
+    </nav>
+  );
 }
 
 export default Navbar;
