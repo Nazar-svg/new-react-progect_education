@@ -1,0 +1,15 @@
+.avatar{
+    margin: 0 10px  10px 0;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+}
+.item{
+    position: relative;
+}
+.link{
+  position: absolute;
+  left: 50px;
+  top: 5px;
+  z-index: 1;
+}

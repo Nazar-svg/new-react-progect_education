@@ -1,12 +1,13 @@
 import React from 'react';
-import classes from './../Dialogs.module.css';
 import { NavLink } from "react-router-dom";
-
+import imagen from '../../../imagen/user.svg';
+import classes from './DialogsItem.module.css';
 const DialogItem = (props) => {
     let path = "/dialogs/" + props.id;
     return (
         <div className={`${classes.item} ${classes.active}`}>
-            <NavLink to={path}>{props.name}</NavLink>
+            <img className={classes.avatar} src={imagen}/>
+            <NavLink className={classes.link} to={path}>{props.name}</NavLink>
         </div>
     )
 }
