@@ -2,13 +2,13 @@ import React from 'react';
 import classes from './Post.module.css';
 import img from './_PRO6169.JPG';
 import like from './heart.svg';
-const Post = (props) => {
+const Post = ({message, likesCount }) => {
   return (
   <div className={classes.post}>
     <img className={classes.images} src={img}/>
-    {props.message}
+    {message}
     <button><img className={classes.like} src={like} alt="like"/></button>
-    {props.likesCount}
+    {likesCount}
   </div>
   );
 }

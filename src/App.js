@@ -10,22 +10,31 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Friends from './components/Friends/Friends';
 
-const App = ({ state }) => {
+const App = ({ state, addPost, updateNewPostText }) => {
+
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Navbar />
         <div className="app-wrapper_content">
-          <Route path='/profile' render={() => <Profile state={state.profilePage} />} />
+          <Route path='/profile'
+            render={() => <Profile
+              addPost={addPost}
+              profilePage={state.profilePage}
+              updateNewPostText={updateNewPostText}
+              
+            />} />
           <Route
             path='/dialogs'
-            render={() => <Dialogs state={state.dialogPage} />}
+            render={() => <Dialogs
+              state={state.dialogPage} />}
           />
           <Route path='/news' render={() => <News />} />
           <Route path='/music' render={() => <Music />} />
-          <Route path='/seting' render={() => <Seting />} />
-          <Route path='/friends' render={() => <Friends />} />
+          <Route path='/seting' ><Seting /></Route>
+          <Route path='/friends'><Friends dialogs={state.dialogPage.dialogs} /></Route>
         </div>
       </div>
     </BrowserRouter>);

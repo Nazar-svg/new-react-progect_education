@@ -1,0 +1,15 @@
+.link{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: italic; 
+  }
+  .link:before{
+    content: '';
+    display: block;
+    height: 40px;
+    width: 40px;
+    background-color: yellow;
+    border-radius: 50%;
+  } 

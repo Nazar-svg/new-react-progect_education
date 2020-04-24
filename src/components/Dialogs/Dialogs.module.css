@@ -12,9 +12,7 @@ padding: 10px;
 .dialogsItem a{
     color: black;
 }
-.dialogsItem  .active a{
-    color: red;
-}
+
 .messages{
     padding: 10px;
 }

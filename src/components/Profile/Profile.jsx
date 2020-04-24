@@ -3,10 +3,14 @@ import MyPosts from '../Profile/MyPosts/MyPosts';
 import ProfileInfo from '../Profile/ProfileInfo/ProfileInfo';
 import classes from './Profile.module.css';
 
-const Profile = ({ state }) => {
+const Profile = ({ profilePage, addPost, updateNewPostText }) => {
   return (<div>
     <ProfileInfo />
-    <MyPosts state={state} />
+    <MyPosts
+      updateNewPostText={updateNewPostText}
+      addPost={addPost}
+      newPostsText={profilePage.newPostsText}
+      profilePage={profilePage} />
   </div>);
 }
 

@@ -4,12 +4,14 @@ import Message from './Messages/Message';
 import classes from './Dialogs.module.css';
 
 const Dialogs = ({ state }) => {
-
     const dialogsElements = state.dialogs
         .map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} />);
 
     const messagesElement = state.messages
-        .map(message => <Message key={message.id} post={message.post} />);
+        .map(message => <Message 
+            key={message.id} 
+             post={message.post}
+            />);
 
     return (
         <div className={classes.dialogs}>

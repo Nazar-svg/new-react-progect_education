@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Friends = (props) => {
+const Friends = ({dialogs}) => {
+   console.log(dialogs);
+const friendsMaper = dialogs.map(item => <div key={item.id}>{item.name}</div>)
     return (
         <div>
-            Friends
+           {friendsMaper} 
         </div>
     )
 }
