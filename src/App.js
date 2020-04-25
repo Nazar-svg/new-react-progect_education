@@ -10,7 +10,7 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Friends from './components/Friends/Friends';
 
-const App = ({ state, addPost, updateNewPostText }) => {
+const App = ({ state, updateNewPostText, dispatch }) => {
 
 
   return (
@@ -21,10 +21,8 @@ const App = ({ state, addPost, updateNewPostText }) => {
         <div className="app-wrapper_content">
           <Route path='/profile'
             render={() => <Profile
-              addPost={addPost}
+              dispatch={dispatch}
               profilePage={state.profilePage}
-              updateNewPostText={updateNewPostText}
-              
             />} />
           <Route
             path='/dialogs'

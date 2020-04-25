@@ -1,16 +1,17 @@
 import React from 'react';
 import Post from './Post/Post';
 import classes from './MyPosts.module.css';
-const MyPosts = ({ profilePage, addPost, newPostsText, updateNewPostText }) => {
+const MyPosts = ({ profilePage, dispatch, newPostsText, updateNewPostText }) => {
   let newPostElement = React.createRef();
   const postElements = profilePage.posts
     .map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount} />);
   const addPosts = () => {
-    addPost();
+    dispatch({ type: 'ADD-POST'});
   }
   const newPostChange = () => {
     const Text = newPostElement.current.value;
-    updateNewPostText(Text);
+    let action = ({ type: 'UPDATE-NEW-POST-TEXT', newText: Text } );
+    dispatch(action);
   }
   return (
     <div>
