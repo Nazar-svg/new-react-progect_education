@@ -1,3 +1,6 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 let store = {
     _state: {
         profilePage: {
@@ -51,8 +54,12 @@ let store = {
             this._callSubscraiber(this._state);
         }
     }
+
 }
 
+export const addPostActionCreater = () => ( { type: ADD_POST });
+export const updateNewPostTextActionCreater = (Text) => 
+ ({type: UPDATE_NEW_POST_TEXT, newText: Text });
 
 export default store;
 window.store = store;

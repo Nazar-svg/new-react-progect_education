@@ -10,7 +10,7 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Friends from './components/Friends/Friends';
 
-const App = ({ state, updateNewPostText, dispatch }) => {
+const App = ({ state, dispatch }) => {
 
 
   return (
