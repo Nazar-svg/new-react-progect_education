@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let store = {
     _state: {
@@ -8,7 +10,7 @@ let store = {
                 { id: 1, message: 'what, you doing?', likesCount: '7' },
                 { id: 2, message: 'what, you problem?', likesCount: '12' }
             ],
-            newPostsText: "",
+            newPostsText: ""
         },
         dialogPage: {
             dialogs: [
@@ -21,6 +23,7 @@ let store = {
             messages: [
                 { id: 2, post: 'What you doing todey?' },
             ],
+            newMessageText: ""
         },
         sidebar: {
             friends: [
@@ -29,6 +32,8 @@ let store = {
                 { id: 3, name: 'Angelina' },
             ]
         }
+
+        
     },
     getState() {
         return this._state;
@@ -40,7 +45,7 @@ let store = {
         this._callSubscraiber = observer;
     },
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             const newPost = {
                 id: Math.random(),
                 message: this._state.profilePage.newPostsText,
@@ -49,17 +54,28 @@ let store = {
             this._state.profilePage.posts.push(newPost);
             this._state.profilePage.newPostsText = "";
             this._callSubscraiber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostsText = action.newText;
+            this._callSubscraiber(this._state);
+        }else if (action.type === UPDATE_NEW_MESSAGE_BODY){
+            this._state.dialogPage.newMessageBody = action.body;
+            this._callSubscraiber(this._state);
+        }else if (action.type === SEND_MESSAGE){
+            let body = this._state.dialogPage.newMessageBody;
+            this._state.dialogPage.newMessageBody = "";
+            this._state.dialogPage.messages.push({ id: Math.random(), post: body })
             this._callSubscraiber(this._state);
         }
     }
-
 }
 
 export const addPostActionCreater = () => ( { type: ADD_POST });
 export const updateNewPostTextActionCreater = (Text) => 
  ({type: UPDATE_NEW_POST_TEXT, newText: Text });
+
+ export const sendMessageCreater = () => ( { type: SEND_MESSAGE});
+export const updateNewMessageBodyCreater = (body) => 
+ ({type: UPDATE_NEW_MESSAGE_BODY, body: body });
 
 export default store;
 window.store = store;
