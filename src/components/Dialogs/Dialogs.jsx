@@ -2,7 +2,7 @@ import React from 'react';
 import DialogItem from './DialogsItem/DialogsItem';
 import Message from './Messages/Message';
 import classes from './Dialogs.module.css';
-import { sendMessageCreater, updateNewMessageBodyCreater } from '../../state/state';
+import { sendMessageCreater, updateNewMessageBodyCreater } from '../../state/dialogsReducer';
 
 const Dialogs = ({ state, store, dispatch }) => {
     const dialogsElements = state.dialogs

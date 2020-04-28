@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from './Post/Post';
 import classes from './MyPosts.module.css';
-import { updateNewPostTextActionCreater, addPostActionCreater } from '../../../state/state';
+import { updateNewPostTextActionCreater, addPostActionCreater } from '../../../state/profileReducer';
 const MyPosts = ({ profilePage, dispatch, newPostsText }) => {
   let newPostElement = React.createRef();
   const postElements = profilePage.posts
