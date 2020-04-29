@@ -1,17 +1,18 @@
 import React from 'react';
 import Post from './Post/Post';
 import classes from './MyPosts.module.css';
-import { updateNewPostTextActionCreater, addPostActionCreater } from '../../../state/profileReducer';
-const MyPosts = ({ profilePage, dispatch, newPostsText }) => {
+
+
+const MyPosts = ({ profilePage, newPostsText, updateNewPostText, addPost }) => {
   let newPostElement = React.createRef();
-  const postElements = profilePage.posts
+  const postElements = profilePage.posts  
     .map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount} />);
-  const addPosts = () => {
-    dispatch(addPostActionCreater());
+  const onAddPosts = () => {
+   addPost();
   }
   const newPostChange = () => {
-    const Text = newPostElement.current.value;
-    dispatch(updateNewPostTextActionCreater(Text));
+    const text = newPostElement.current.value;
+    updateNewPostText(text);
   }
   return (
     <div>
@@ -25,7 +26,7 @@ const MyPosts = ({ profilePage, dispatch, newPostsText }) => {
       <div>
         <button
           className={classes.button}
-          onClick={addPosts}
+          onClick={onAddPosts}
         >Add Posts</button>
       </div>
       {postElements}

@@ -26,12 +26,12 @@ const App = ({ state, dispatch, store }) => {
             render={() => <Dialogs
               dispatch={dispatch}
               store={store}
-              state={state.dialogPage} />}
+              state={state.dialogsPage} />}
           />
           <Route path='/news' render={() => <News />} />
           <Route path='/music' render={() => <Music />} />
           <Route path='/seting' ><Seting /></Route>
-          <Route path='/friends'><Friends dialogs={state.dialogPage.dialogs} /></Route>
+          {/* <Route path='/friends'><Friends dialogs={state.dialogPage.dialogs} /></Route> */}
         </div>
       </div>);
 }

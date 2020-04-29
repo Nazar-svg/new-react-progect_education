@@ -2,9 +2,10 @@ import React from 'react';
 import DialogItem from './DialogsItem/DialogsItem';
 import Message from './Messages/Message';
 import classes from './Dialogs.module.css';
-import { sendMessageCreater, updateNewMessageBodyCreater } from '../../state/dialogsReducer';
+import { sendMessageCreater, updateNewMessageBodyCreater } from '../../redux/dialogsReducer';
 
 const Dialogs = ({ state, store, dispatch }) => {
+
     const dialogsElements = state.dialogs
         .map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} />);
 
