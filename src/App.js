@@ -9,6 +9,7 @@ import Seting from './components/Seting/Seting';
 import './App.css';
 import { Route } from 'react-router-dom';
 import Friends from './components/Friends/Friends';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 const App = ({ state, dispatch, store }) => {
   return (
@@ -23,7 +24,7 @@ const App = ({ state, dispatch, store }) => {
             />} />
           <Route
             path='/dialogs'
-            render={() => <Dialogs
+            render={() => <DialogsContainer
               dispatch={dispatch}
               store={store}
               state={state.dialogsPage} />}
