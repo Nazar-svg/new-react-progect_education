@@ -2,7 +2,6 @@ import React from 'react';
 import Post from './Post/Post';
 import classes from './MyPosts.module.css';
 
-
 const MyPosts = ({ profilePage, newPostsText, updateNewPostText, addPost }) => {
   let newPostElement = React.createRef();
   const postElements = profilePage.posts  

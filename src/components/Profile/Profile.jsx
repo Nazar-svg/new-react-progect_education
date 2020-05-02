@@ -10,7 +10,6 @@ const Profile = ({ profilePage, dispatch, updateNewPostText }) => {
     <MyPostsContainer
       updateNewPostText={updateNewPostText}
       dispatch={dispatch}
-      newPostsText={profilePage.newPostsText}
       profilePage={profilePage} />
   </div>);
 }

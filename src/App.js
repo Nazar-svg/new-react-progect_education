@@ -11,7 +11,7 @@ import { Route } from 'react-router-dom';
 import Friends from './components/Friends/Friends';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 
-const App = ({ state, dispatch, store }) => {
+const App = ({  dispatch, store }) => {
   return (
       <div className="app-wrapper">
         <Header />
@@ -20,14 +20,13 @@ const App = ({ state, dispatch, store }) => {
           <Route path='/profile'
             render={() => <Profile
               dispatch={dispatch}
-              profilePage={state.profilePage}
             />} />
           <Route
             path='/dialogs'
             render={() => <DialogsContainer
               dispatch={dispatch}
               store={store}
-              state={state.dialogsPage} />}
+               />}
           />
           <Route path='/news' render={() => <News />} />
           <Route path='/music' render={() => <Music />} />
