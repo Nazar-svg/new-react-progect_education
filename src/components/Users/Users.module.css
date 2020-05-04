@@ -1,0 +1,15 @@
+.userPhoto{
+    height: 100px;
+    width: 100px;
+}
+button{
+    display: inline-block;
+    margin: 10px ;
+    width: 100px;
+    height: 25px;
+    background-color:white;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 600;
+    color: black;
+}
