@@ -11,6 +11,7 @@ const mapStateToProps = (state) =>{
 const mapDispachToProps = (dispatch) => {
   return{
     follow: (userId) => {
+      console.log(userId)
       dispatch(followAC(userId));
     },
     unfollow: (userId) => {
@@ -23,5 +24,5 @@ const mapDispachToProps = (dispatch) => {
 }
 
 
-const UsersContainer = connect(mapStateToProps, mapDispachToProps) (Users);
+const UsersContainer = connect(mapStateToProps, mapDispachToProps)(Users);
 export default UsersContainer;
