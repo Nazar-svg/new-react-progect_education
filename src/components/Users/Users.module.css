@@ -2,6 +2,9 @@
     height: 100px;
     width: 100px;
 }
+span{
+    margin-right: 10px;
+}
 button{
     display: inline-block;
     margin: 10px ;
@@ -12,4 +15,7 @@ button{
     font-size: 10px;
     font-weight: 600;
     color: black;
+}
+.selectedPage{
+    font-weight: bold;
 }
