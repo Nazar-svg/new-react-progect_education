@@ -6,8 +6,18 @@ import userAvatar from '../../imagen/user_img.png';
 class Users extends React.Component {
 
     componentDidMount() {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-            this.props.setUsers(response.data.items)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+            this.props.setUsers(response.data.items);
+            this.props.setTotalUsersCount(response.data.totalCount);
+        });
+    }
+
+    onPageChanged = (pageNumber) =>{
+        console.log(pageNumber);
+        this.props.setCurrentPage(pageNumber);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`).then(response => {
+            this.props.setUsers(response.data.items);
+            this.props.setTotalUsersCount(response.data.totalCount);
         });
     }
     render() {
@@ -18,15 +28,13 @@ class Users extends React.Component {
             pages.push(i);
         }
 
-
-
-
         return (
             <div>
                 <div>
                     {pages.map(
                         p => {
-                            return<span className={this.props.currentPage === p && classes.selectedPage}>{p}</span>
+                            return<span key={p} className={this.props.currentPage === p ? classes.selectedPage : ''}
+                             onClick={() => this.onPageChanged(p) }>{p}</span>
                         })}
                    
                 </div>
