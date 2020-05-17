@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { followAC, unfollowAC, setUsersAC, setCurrentPageAC, setTotalUsersCountAC, toggleIsFetchingAC } from '../../redux/usersReducer';
+import { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching } from '../../redux/usersReducer';
 import * as axios from 'axios';
 import Users from './Users.js';
 import Preloader from '../common/preloader/Preloader';
@@ -51,29 +51,29 @@ const mapStateToProps = (state) => {
     isFetching: state.usersPage.isFetching
   }
 }
-const mapDispachToProps = (dispatch) => {
-  return {
-    follow: (userId) => {
-      dispatch(followAC(userId));
-    },
-    unfollow: (userId) => {
-      dispatch(unfollowAC(userId));
-    },
-    setUsers: (users) => {
-      dispatch(setUsersAC(users));
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(setCurrentPageAC(pageNumber));
-    },
-    setTotalUsersCount: (totalCount) => {
-      dispatch(setTotalUsersCountAC(totalCount));
-    },
-    toggleIsFetching: (isFetching) => {
-      dispatch(toggleIsFetchingAC(isFetching));
-    }
-  }
-}
+// const mapDispachToProps = (dispatch) => {
+//   return {
+//     follow: (userId) => {
+//       dispatch(followAC(userId));
+//     },
+//     unfollow: (userId) => {
+//       dispatch(unfollowAC(userId));
+//     },
+//     setUsers: (users) => {
+//       dispatch(setUsersAC(users));
+//     },
+//     setCurrentPage: (pageNumber) => {
+//       dispatch(setCurrentPageAC(pageNumber));
+//     },
+//     setTotalUsersCount: (totalCount) => {
+//       dispatch(setTotalUsersCountAC(totalCount));
+//     },
+//     toggleIsFetching: (isFetching) => {
+//       dispatch(toggleIsFetchingAC(isFetching));
+//     }
+//   }
+// }
 
-
-const UsersContainer = connect(mapStateToProps, mapDispachToProps)(UsersApiComponent);
+const UsersContainer = connect(mapStateToProps, {
+  follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching })(UsersApiComponent);
 export default UsersContainer;
