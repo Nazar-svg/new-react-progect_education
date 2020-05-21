@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Seting from './components/Seting/Seting';
@@ -17,8 +17,8 @@ const App = ({  dispatch, store }) => {
         <Header />
         <Navbar />
         <div className="app-wrapper_content">
-          <Route path='/profile'
-            render={() => <Profile
+          <Route path='/profile/:userId?'
+            render={() => <ProfileContainer
               dispatch={dispatch}
             />} />
           <Route
