@@ -18,9 +18,7 @@ const App = ({  dispatch, store }) => {
         <Navbar />
         <div className="app-wrapper_content">
           <Route path='/profile/:userId?'
-            render={() => <ProfileContainer
-              dispatch={dispatch}
-            />} />
+            render={() => <ProfileContainer />} />
           <Route
             path='/dialogs'
             render={() => <DialogsContainer
